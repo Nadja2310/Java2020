@@ -1,0 +1,4 @@
+1.git add название файла.java
+2.git commit -m "что мы делали"
+3.git status
+4.git push origin

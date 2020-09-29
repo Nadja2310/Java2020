@@ -8,10 +8,10 @@ public class HomeWork14 {
         System.out.println("Таблица умножения");
         multiplicationTable();
         System.out.println(" Геометрические фигуры");
-        // geometricalFigures1(5);
-        //geometricalFigures2(5);
-        // geometricalFigures3(5);
-        //^  geometricalFigures4(5);
+         geometricalFigures1(5);
+         geometricalFigures2(5);
+         geometricalFigures3(5);
+         geometricalFigures4(5);
         geometricalFigures5(5);
     }
 
@@ -113,6 +113,7 @@ public class HomeWork14 {
                 int a = i * j;
                 String str = a + "   ";
                 System.out.print(str.substring(0, 3));
+                //printf("%3d",i*j);
 
             }
             System.out.println();
