@@ -1,0 +1,51 @@
+ 0 cd /home
+   1 mkdir animals
+   2 cd animals/
+   3 mkdir dogs
+   4 mkdir cats
+   5 mkdir fish
+   6 cd dogs/
+   7 touch pluto.txt
+   8 cd ..
+   9 cd cats
+  10 touch garfield.txt
+  11 cd ..
+  12 cd fish
+  13 touch nemo.txt
+  14 cd /
+  15 cd /tmp/
+  16 touch adam.txt
+  17 cd/
+  18 cd /
+  19 cd home/
+  20 mkdir humans
+  21 cd humans/
+  22 cd /
+  23 cp /tmp/adam.txt /home/humans/
+  24 touch /tmp/evA.txt
+  25 cd tmp/
+  26 ls
+  27 mkdir -p /opt/eve
+  28 cd ..
+  29 ls
+  30 cd /opt/eve/
+  31 mv /tmp/evA.txt .
+  32 ls
+  33 mv /opt/eve/evA.txt /tmp
+  34 ls
+  35 mv /tmp/evA.txt /opt/eve
+  36 cd .
+  37 cd ..
+  38 ls
+  39 mv /opt/eve /home/humans/eve //я нечаянно создала папку eve и он ее скопировал
+  40 cd /home/humans/
+  41 ls
+  42 touch /tmp/evA.txt
+  43 mv /tmp/evA.txt /opt/eve.txt
+  44 cd /
+  45 ls /opt
+  46 ls /tmp
+  47 ls /home/humans/
+  48 mv /opt/eve.txt /home/humans/
+  49 ls /home/humans/
+  50 history
