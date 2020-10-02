@@ -1,4 +1,4 @@
- 0 cd /home
+0 cd /home
    1 mkdir animals
    2 cd animals/
    3 mkdir dogs
