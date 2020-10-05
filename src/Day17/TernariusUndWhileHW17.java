@@ -45,6 +45,7 @@ public class TernariusUndWhileHW17 {
 
     private static String myFirstCompareTo(String str1, String str2) {
         return ((str1.charAt(0) < str2.charAt(0)) ? str1 : str2);
+        //(str1.compareTo(str2)>0)?str1:str2;compareTo сравнивает побуквенно код каждого символа
     }
 
     private static int getMeMin(int a, int b) {
