@@ -13,17 +13,20 @@ public class MyLovelyDouble {
         double[] output = new double[size];
         for (int i = 0; i < size; i++) {
             double myRandomTemp=  ((Math.random() * (max - min) + 1) + min);
-            output[i]=myRandomTemp;
+            int temp= (int) myRandomTemp*1000;
+            double end=temp/1000;
+            output[i]=end;
         }
         return output;
     }
     public static void myPrintInArray(double[] arr) {
-        for (int i = 0; i < arr.length; i++) {
-            // for (int j = 0; j < 5; j++) {
-            if (i == arr.length - 1) {
+        for (int i = 0; i < arr.length-1; i++) {
+
+            /*if (i == arr.length - 1) {
                 System.out.print(arr[i] + " ");
-            } else System.out.print(arr[i] + ",");
+            } else System.out.print(arr[i] + ",");*/
+            System.out.print(arr[i] + ",");
         }
-        System.out.println();
+        System.out.println(arr[arr.length-1]);// чтобы убрать запятую на последнем элементе
     }
 }

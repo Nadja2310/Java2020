@@ -32,7 +32,6 @@ public class HomeWork10 {
 
                 if (i % j == 0) {
                     label += 1;//label ++;
-                    //System.out.println(i + " label J " + label);
                 }
             }
             //System.out.println(label);
