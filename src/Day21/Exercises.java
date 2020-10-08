@@ -32,14 +32,14 @@ public class Exercises {
     }
 
     private static int[] getEvenArray(int a, int b) {
-       // int size=((b-a)%2==0)?(b-a)/2:(b-a)/2+1;
+        int size=(a%2==0)?(b-a)/2+1:(b-a-1)/2+1;
       //  int size=(b-a)/2+1;
-        int size=0;
-        for (int i = a; i <=b ; i++) {
+       // int size=0;
+      /*  for (int i = a; i <=b ; i++) {
             if (i % 2 == 0) {
                 size++;
             }
-        }
+        }*/
         int count=0;
         int[] input = new int[size];
         for (int i = a; i <=b ; i++) {

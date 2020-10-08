@@ -13,14 +13,16 @@ public class PrintStringArray {
         Scanner input = new Scanner(System.in);
         int size;
         String s;
-        System.out.println("array size?");
+        System.out.println("\u001B[44m"+"Array size?"+"\u001B[0m");
+
         size = input.nextInt();
         String[] outpurArr = new String[size];
         for (int i = 0; i < size; i++) {
-            System.out.println("Enter the array element(string)");
+            System.out.println("\u001B[33m"+"Enter the array element(string)");
             s = input.next();
             outpurArr[i] = s;
         }
+        System.out.println("\u001B[0m");
         input.close();
         return outpurArr;
     }

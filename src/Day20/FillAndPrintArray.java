@@ -10,10 +10,11 @@ public class FillAndPrintArray {
     }
 
     public static void myPrintInArray(int[] arr) {
+        System.out.print("[");
         for (int i = 0; i < arr.length; i++) {
             System.out.print(arr[i]+"  ");
         }
-        System.out.println();
+        System.out.println("]");
     }
 
     public static void fillArray(int[] arr, int myFillElement) {
