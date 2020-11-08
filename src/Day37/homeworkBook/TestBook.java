@@ -45,13 +45,11 @@ public class TestBook {
 
     public static void printArray(Book[] inputBook) {
         for (int i = 0; i < inputBook.length; i++) {
-            //for (int j = 0; j < inputBook[i].length; j++) {
             System.out.println(inputBook[i]);
-            //    }
         }
     }
 
-    public static void insertionSort(Book[] inputBook) { //String fieldSort
+    public static void insertionSort(Book[] inputBook) {
         System.out.println("popal");
 
         for (int i = 1; i < inputBook.length; i++) {
