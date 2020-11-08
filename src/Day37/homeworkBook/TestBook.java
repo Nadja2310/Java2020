@@ -1,6 +1,8 @@
 package Day37.homeworkBook;
 
 
+import java.util.Arrays;
+
 public class TestBook {
     public static void main(String[] args) {
         Book book1 = new Book("War and Peace", "Leo Tolstoi", 1800, 1215,
@@ -22,7 +24,7 @@ public class TestBook {
         Book book9 = new Book("Divine Comedy", " Dante Alighieri",
                 1321, 632, "Library Berlin", "", "", "", "italian");
         Book book10 = new Book("The Adventures of Pinocchio", "Carlo Collodi",
-                1883, 129,"italian");
+                1883, 129, "italian");
 
 
         Book[] arrayBook = new Book[]{book1, book2, book3, book4, book5, book6, book7, book8, book9, book10};
@@ -30,6 +32,37 @@ public class TestBook {
         haveBooksInTheLibrary(arrayBook);
         inputBookmark(book2, 25);
         getBookRead(book10, "Malinkin", "04.11.2020", "10.12.2020");
+
+        insertionSort(arrayBook);
+        printArray(arrayBook);
+        //classwork
+        Book bk1 = new Book();
+        Book bk2 = new Book();
+        System.out.println(Book.getExemplar());
+        System.out.println(bk1); //в классе создан метод toString Book
+        // {title='Azbuka', year=0, author='Marschak', page=123}
+    }
+
+    public static void printArray(Book[] inputBook) {
+        for (int i = 0; i < inputBook.length; i++) {
+            //for (int j = 0; j < inputBook[i].length; j++) {
+            System.out.println(inputBook[i]);
+            //    }
+        }
+    }
+
+    public static void insertionSort(Book[] inputBook) { //String fieldSort
+        System.out.println("popal");
+
+        for (int i = 1; i < inputBook.length; i++) {
+            int location = i - 1;
+            Book temp = inputBook[i];
+            while (location >= 0 && temp.year < inputBook[location].year) {
+                inputBook[location + 1] = inputBook[location];
+                location = location - 1;
+            }
+            inputBook[location + 1] = temp;
+        }
     }
 
     public static void getBookRead(Book inputBook, String userName, String issueDate, String returnDate) {
