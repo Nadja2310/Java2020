@@ -24,11 +24,26 @@ public class UniApplication {
         printArray(addArray);
 
         System.out.println("_____chang_________");
-        changFirstName(addArray, "Кая", 32, 28595959);
+        changFirstName(addArray, "Кая", 33, 28595959);
         System.out.println("_____chang_________");
-        changFirstName(addArray, "Катя", 32, 28595959);
+        changFirstName(addArray, "Катя", 33, 28595959);
         printArray(addArray);
+        System.out.println("_____Sort_________");
+        sortAge(addArray);
+        printArray(addArray);
+    }
 
+    private static UniUser sortAge(UniUser[] array) {
+        for (int i = 1; i < array.length; i++) {
+            UniUser temp = array[i];
+            int location=i-1;
+           while (location>=0 && temp.getAge()<array[location].getAge()) {
+                array[location+1]=array[location];
+                location=location-1;
+            }
+           array[location+1]=temp;
+        }
+        return null;
     }
 
     private static UniUser findByFirstName(UniUser[] array, String firstName) {
