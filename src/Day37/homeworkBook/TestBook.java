@@ -1,6 +1,5 @@
 package Day37.homeworkBook;
 
-
 import java.util.Arrays;
 
 public class TestBook {
@@ -11,7 +10,7 @@ public class TestBook {
                 "Library Berlin", "Petrov", "02.10.2020", "30.10.2020");
         Book book3 = new Book("Anna Karenina", "Leo Tolstoi",
                 1878, 864, "Library Berlin", "Petrov", "02.10.2020", "30.10.2020");
-        Book book4 = new Book("The Master and Margarita", " Mikhail Bulgakov",
+        Book book4 = new Book("The Master and Margarita", "Mikhail Bulgakov",
                 1966, 480, "Library Berlin", "Katz", "02.10.2020", "30.10.2020");
         Book book5 = new Book("Dead Souls", "Nikolai Gogol",
                 1842, 612, "Library Berlin", "", "", "", "russian");
@@ -23,64 +22,30 @@ public class TestBook {
                 1601, 713, "Library Berlin", "", "", "", "english");
         Book book9 = new Book("Divine Comedy", " Dante Alighieri",
                 1321, 632, "Library Berlin", "", "", "", "italian");
-        Book book10 = new Book("The Adventures of Pinocchio", "Carlo Collodi",
-                1883, 129, "italian");
+        Book book10 = new Book("The Adventures of Pinocchio", "Carlo Collodi", 1883, 129, "italian");
+
+        Library myLib = new Library(20);
+        myLib.addBook(book1);
+        myLib.addBook(book2);
+        myLib.addBook(book3);
+        myLib.addBook(book4);
+        myLib.addBook(book5);
+        myLib.addBook(book6);
+        myLib.addBook(book7);
+        myLib.addBook(book8);
+        //Book[] arrayBook = new Book[]{book1, book2, book3, book4, book5, book6, book7, book8, book9, book10};
+
+        myLib.haveBooksInTheLibrary();
+        myLib.inputBookmark(book2, 25);
+        myLib.getBookRead(book10, "Malinkin", "04.11.2020", "10.12.2020");
+        myLib.printArray();
+        System.out.println("______________insertionSort_________________");
+        myLib.insertionSort();
+        myLib.printArray();
+        System.out.println("______________BinarySearch__________________");
+        System.out.println(myLib.iterativeBinarySearch(book5));
+        System.out.println(myLib.iterativeBinarySearch(book10));
 
 
-        Book[] arrayBook = new Book[]{book1, book2, book3, book4, book5, book6, book7, book8, book9, book10};
-
-        haveBooksInTheLibrary(arrayBook);
-        inputBookmark(book2, 25);
-        getBookRead(book10, "Malinkin", "04.11.2020", "10.12.2020");
-
-        insertionSort(arrayBook);
-        printArray(arrayBook);
-        //classwork
-        Book bk1 = new Book();
-        Book bk2 = new Book();
-        System.out.println(Book.getExemplar());
-        System.out.println(bk1); //в классе создан метод toString Book
-        // {title='Azbuka', year=0, author='Marschak', page=123}
-    }
-
-    public static void printArray(Book[] inputBook) {
-        for (int i = 0; i < inputBook.length; i++) {
-            System.out.println(inputBook[i]);
-        }
-    }
-
-    public static void insertionSort(Book[] inputBook) {
-        System.out.println("popal");
-
-        for (int i = 1; i < inputBook.length; i++) {
-            int location = i - 1;
-            Book temp = inputBook[i];
-            while (location >= 0 && temp.year < inputBook[location].year) {
-                inputBook[location + 1] = inputBook[location];
-                location = location - 1;
-            }
-            inputBook[location + 1] = temp;
-        }
-    }
-
-    public static void getBookRead(Book inputBook, String userName, String issueDate, String returnDate) {
-        inputBook.setUserBook(userName);
-        inputBook.setIssueDate(issueDate);
-        inputBook.setReturnDate(returnDate);
-    }
-
-    public static void inputBookmark(Book inputBook, int page) {
-        inputBook.setBookmark(page);
-        System.out.println("закладка на стр. " + inputBook.getBookmark());
-    }
-
-    public static void haveBooksInTheLibrary(Book[] arrayBook) {
-        System.out.println("В наше библиотеке есть в наличие ");
-        for (int i = 0; i < arrayBook.length; i++) {
-            if (arrayBook[i].getUserBook().isEmpty()) {
-                System.out.println(arrayBook[i].getTitle()
-                        + "  автор  " + arrayBook[i].getAuthor());
-            }
-        }
     }
 }
