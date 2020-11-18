@@ -1,5 +1,7 @@
 package Day37.homeworkBook;
 
+import java.time.LocalDate;
+
 public class Library {
     private Book[] books;
     private int size;
@@ -39,7 +41,7 @@ public class Library {
     public void haveBooksInTheLibrary() {
         System.out.println("В наше библиотеке есть в наличие ");
         for (int i = 0; i < size; i++) {
-            if (books[i].getUserBook().isEmpty()) {
+            if (books[i].getUserBook()==null) {
                 System.out.println(books[i].getTitle()
                         + "  автор  " + books[i].getAuthor());
             }
@@ -51,7 +53,7 @@ public class Library {
         System.out.println("закладка на стр. " + inputBook.getBookmark());
     }
 
-    public void getBookRead(Book inputBook, String userName, String issueDate, String returnDate) {
+    public void setTakenToReadBook(Book inputBook, String userName, LocalDate issueDate, LocalDate returnDate) {
         inputBook.setUserBook(userName);
         inputBook.setIssueDate(issueDate);
         inputBook.setReturnDate(returnDate);
@@ -86,10 +88,35 @@ public class Library {
             }
         }
         if (elementPosition != -1) {
-            System.out.println(books[elementPosition]);
             return true;
         }
-        System.out.println("Not found " + element.getAuthor());
         return false;
+    }
+
+    public void displayBooksByGenre(Genre genre) {
+        System.out.println("Display books by genre - "+genre);
+        for (int i = 0; i < size; i++) {
+            if (books[i].getGenre() == genre) {
+                System.out.println(books[i]);
+            }
+        }
+    }
+
+    public void displayBooksByAuthor(String author) {
+        System.out.println("Display books by author - "+author);
+        for (int i = 0; i < size; i++) {
+            if (author.toLowerCase().equals(books[i].getAuthor().toLowerCase())) {
+                System.out.println(books[i]);
+            }
+        }
+    }
+
+    public void displayBooksByCover(Cover cover) {
+        System.out.println("Display books by cover - "+cover);
+        for (int i = 0; i < size; i++) {
+            if (books[i].getCover() == cover) {
+                System.out.println(books[i]);
+            }
+        }
     }
 }

@@ -1,74 +1,39 @@
 package Day37.homeworkBook;
 
+
+import java.time.LocalDate;
+
 public class Book {
     private static int exemplar = 0;
-    String title;
-    int year;
-    String author;
-    int page;
-    String language;
-    String genre;
-    String library;
-    String userBook = "";
-    String issueDate = "";
-    String returnDate = "";
+    private String title;
+    private int year;
+    private String author;
+    private int page;
+    private String language;
+    private Genre genre;
+    private Cover cover;
+    private String library;
+    private String userBook;
+    private LocalDate issueDate;
+    private LocalDate returnDate;
     int bookmark;
-
-/*public Book(){
-    this("Azbuka","Marschak",123);
-exemplar++;
-}*/
 
     public static int getExemplar() {
         return exemplar;
     }
 
-    public Book(String title, String author, int year, int page, String language) {
+    public Book(String title, String author, int year, int page, Genre genre, Cover cover, String language) {
         this.title = title;
         this.year = year;
         this.author = author;
         this.page = page;
         this.language = language;
-    }
-
-    public Book(String title, int year, String author, int page) {
-        this.title = title;
-        this.year = year;
-        this.author = author;
-        this.page = page;
-    }
-
-    public Book(String title, String author, int year, int page, String library, String userBook, String issueDate, String returnDate) {
-        this.title = title;
-        this.year = year;
-        this.author = author;
-        this.page = page;
-        this.library = library;
-        this.userBook = userBook;
-        this.issueDate = issueDate;
-        this.returnDate = returnDate;
-    }
-
-    public Book(String title, String author, String genre, String userBook, String issueDate, String returnDate) {
-        this.title = title;
-        this.author = author;
         this.genre = genre;
-        this.userBook = userBook;
-        this.issueDate = issueDate;
-        this.returnDate = returnDate;
+        this.cover = cover;
     }
 
-    public Book(String title, String author, int year, int page, String library,
-                String userBook, String issueDate, String returnDate, String language) {
-        this.title = title;
-        this.year = year;
-        this.author = author;
-        this.page = page;
+    public void setLibrary(String library) {
         this.library = library;
-        this.userBook = userBook;
-        this.issueDate = issueDate;
-        this.returnDate = returnDate;
-        this.language = language;
     }
 
     public void setBookmark(int bookmark) {
@@ -79,6 +44,14 @@ exemplar++;
 
     public int getBookmark() {
         return bookmark;
+    }
+
+    public Genre getGenre() {
+        return genre;
+    }
+
+    public Cover getCover() {
+        return cover;
     }
 
     public String getUserBook() {
@@ -93,28 +66,24 @@ exemplar++;
         return author;
     }
 
+    public static void setExemplar(int exemplar) {
+        Book.exemplar = exemplar;
+    }
+
     public void setUserBook(String userBook) {
         this.userBook = userBook;
     }
 
-    public String getIssueDate() {
-        return issueDate;
-    }
-
-    public void setIssueDate(String issueDate) {
+    public void setIssueDate(LocalDate issueDate) {
         this.issueDate = issueDate;
     }
 
-    public String getReturnDate() {
-        return returnDate;
-    }
-
-    public void setReturnDate(String returnDate) {
+    public void setReturnDate(LocalDate returnDate) {
         this.returnDate = returnDate;
     }
 
     void checkOutTheBook() {
-        if (!issueDate.isEmpty()) {
+        if (issueDate != null) {
             System.out.println("Reading a book " + userBook);
             System.out.println("Return date " + returnDate);
         }
